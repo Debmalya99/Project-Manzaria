@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Placeholder-Playground/Assets/Starting-village.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 5.71688, 3.56417 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 23.295
+
+[node name="Signboard" type="StaticBody2D"]
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 1.11488, -2.80839 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 140.009, 63.9764, 22.3611, 15.6785 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.47247, -7.34408 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 140.521, 35.8319, 20.6905, 17.7347 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -3.61893 )
+shape = SubResource( 1 )
+
+[node name="TriggerArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerArea"]
+position = Vector2( 0, -3.61893 )
+shape = SubResource( 2 )

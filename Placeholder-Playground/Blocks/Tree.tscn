@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Placeholder-Playground/Assets/Starting-village.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 4.56982
+height = 10.8537
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="shadow" type="Sprite" parent="."]
+position = Vector2( 1.11488, -2.80839 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 140.009, 63.9764, 22.3611, 15.6785 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.210463, -12.768 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 138.1, -0.241369, 24.0318, 29.8148 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.11488, -9.37976 )
+shape = SubResource( 1 )
