@@ -19,6 +19,10 @@ config/name="Project Manzaria"
 run/main_scene="res://Placeholder-Playground/Playground.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Globals="*res://Utils/Globals.gd"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

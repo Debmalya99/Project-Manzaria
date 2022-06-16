@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Placeholder-Playground/Assets/Starting-village.png" type="Texture" id=1]
 [ext_resource path="res://Placeholder-Playground/Blocks/House.tscn" type="PackedScene" id=2]
@@ -8,8 +8,13 @@
 [ext_resource path="res://Placeholder-Playground/Sample-Player/Sample-Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Placeholder-Playground/Blocks/Barrier-Side.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Placeholder-Playground/Blocks/Barrier-Facing.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Placeholder-Playground/Playground.gd" type="Script" id=9]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
 
 [node name="Playground" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Background" type="Node2D" parent="."]
 
@@ -203,31 +208,15 @@ scale = Vector2( 3, 3 )
 [node name="Signboard" type="YSort" parent="YSort"]
 
 [node name="Signboard" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 370.113, 290.028 )
+position = Vector2( 160, 600 )
+Message = "Southwest: Old Forest"
 
 [node name="Signboard2" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 518.138, 371.382 )
+position = Vector2( 410, 260 )
 
 [node name="Signboard3" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 669.328, 501.154 )
-
-[node name="Signboard4" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 88.5049, 626.516 )
-
-[node name="Signboard5" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 700.449, 97.7217 )
-
-[node name="Signboard6" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 913.196, 74.1766 )
-
-[node name="Signboard7" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 840.236, 190.351 )
-
-[node name="Signboard8" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 684.213, 271.73 )
-
-[node name="Signboard9" parent="YSort/Signboard" instance=ExtResource( 5 )]
-position = Vector2( 738.091, 354.792 )
+position = Vector2( 530, 410 )
+Message = "The Sacred Tree"
 
 [node name="Sample-Player" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( 439.71, 361.927 )
@@ -296,3 +285,64 @@ position = Vector2( 477.078, 349.055 )
 
 [node name="Barrier-Side6" parent="YSort/Barriers" instance=ExtResource( 7 )]
 position = Vector2( 477.078, 387.519 )
+
+[node name="Stub" type="YSort" parent="YSort"]
+position = Vector2( -300, -440 )
+
+[node name="Barrier-Side" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1120, 430 )
+
+[node name="Barrier-Side2" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1120, 470 )
+
+[node name="Barrier-Side3" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1120, 510 )
+
+[node name="Barrier-Side4" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1120, 550 )
+
+[node name="Barrier-Side5" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1280, 430 )
+
+[node name="Barrier-Side6" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1280, 470 )
+
+[node name="Barrier-Side7" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1280, 510 )
+
+[node name="Barrier-Side8" parent="YSort/Stub" instance=ExtResource( 7 )]
+position = Vector2( 1280, 550 )
+
+[node name="Barrier-Facing" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1140, 400 )
+
+[node name="Barrier-Facing2" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1180, 400 )
+
+[node name="Barrier-Facing3" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1220, 400 )
+
+[node name="Barrier-Facing4" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1260, 400 )
+
+[node name="Barrier-Facing5" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1140, 560 )
+
+[node name="Barrier-Facing6" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1180, 560 )
+
+[node name="Barrier-Facing7" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1220, 560 )
+
+[node name="Barrier-Facing8" parent="YSort/Stub" instance=ExtResource( 8 )]
+position = Vector2( 1260, 560 )
+
+[node name="Trigger-Switch" type="Area2D" parent="."]
+position = Vector2( 100, 660 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger-Switch"]
+shape = SubResource( 1 )
+
+[node name="Position2D" type="Position2D" parent="Trigger-Switch"]
+position = Vector2( 50, -10 )
+[connection signal="body_entered" from="Trigger-Switch" to="." method="_on_TriggerSwitch_body_entered"]
