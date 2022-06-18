@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Placeholder-Playground/Blocks/Tree.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Placeholder-Playground/Sample-Player/Sample-Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Placeholder-Playground/Blocks/Signboard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Placeholder-Playground/Old-Forest.gd" type="Script" id=4]
+[ext_resource path="res://Placeholder-Playground/Blocks/Ruined-Keep.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 100.0
@@ -126,7 +127,7 @@ position = Vector2( -510, -240 )
 scale = Vector2( 3, 3 )
 
 [node name="Tree26" parent="YSort/Tree" instance=ExtResource( 1 )]
-position = Vector2( -660, 730 )
+position = Vector2( -520, 870 )
 scale = Vector2( 3, 3 )
 
 [node name="Tree27" parent="YSort/Tree" instance=ExtResource( 1 )]
@@ -363,6 +364,18 @@ position = Vector2( 1270, -620 )
 [node name="Signboard" parent="YSort" instance=ExtResource( 3 )]
 position = Vector2( 1130, -690 )
 Message = "East: Asvalon village"
+
+[node name="Ruined-Keep" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -680, 630 )
+scale = Vector2( 5, 5 )
+
+[node name="Position2D" type="Position2D" parent="YSort/Ruined-Keep"]
+position = Vector2( 20, 16 )
+
+[node name="Signboard2" parent="YSort/Ruined-Keep" instance=ExtResource( 3 )]
+position = Vector2( -10, 16 )
+scale = Vector2( 0.4, 0.4 )
+Message = "Ruined Keep. Beware of Monsters"
 
 [node name="Trigger-Area" type="Area2D" parent="."]
 position = Vector2( 1390, -680 )

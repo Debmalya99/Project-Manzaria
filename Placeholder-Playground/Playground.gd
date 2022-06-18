@@ -10,5 +10,5 @@ func _ready():
 
 func _on_TriggerSwitch_body_entered(body):
 	if body.is_in_group('player'):
-		Globals.transition_states['old_forest'] = 1
+		Globals.transition_states['old_forest'] = 0
 		get_tree().change_scene("res://Placeholder-Playground/Old-Forest.tscn")

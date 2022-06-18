@@ -1,15 +1,12 @@
 extends Node2D
 
+onready var KeepExitPosition = $"YSort/Ruined-Keep/Position2D".global_position
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	if Globals.transition_states['old_forest'] == 0:
 		$"YSort/Sample-Player".global_position = $"Trigger-Area/Position2D".global_position
+	elif Globals.transition_states['old_forest'] == 1:
+		$"YSort/Sample-Player".global_position = KeepExitPosition
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

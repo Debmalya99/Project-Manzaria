@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Placeholder-Playground/Assets/Keep-Ruins.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40.1186, 34.4436 )
+
+[node name="Ruined-Keep" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -5.41755, -46.9394 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 9, -3, 105, 120 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -0.630676, -32.3745 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PoolVector2Array( 20.1594, 2.62373, 23.9052, 4.6839, 28.4001, 5.80763, 34.3934, 5.24577, 39.0756, 3.93475, 39.8247, 1.68729, 39.2629, -9.55002, 28.0256, -10.1119, 21.6578, -5.61696 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( -61.2433, 0.187286 )
+polygon = PoolVector2Array( 20.1594, 2.62373, 23.9052, 4.6839, 28.4001, 5.80763, 34.3934, 5.24577, 39.0756, 3.93475, 39.8247, 1.68729, 39.2629, -9.55002, 28.0256, -10.1119, 21.6578, -5.61696 )
